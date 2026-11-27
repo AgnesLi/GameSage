@@ -248,4 +248,3 @@ mvn clean package -DskipTests
 |---|---|
 | `gameSage-code-1.0-SNAPSHOT.jar` | |
 | `gameSage-code-1.0-SNAPSHOT-exec.jar` | Spring Boot 可执行 fat jar（`java -jar` 直接运行） |
-| `gameSage-code-1.0-SNAPSHOT.jar.original` | repackage 前的原始 jar |
