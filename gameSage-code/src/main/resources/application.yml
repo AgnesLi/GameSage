@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  ai:
+    openai:
+      api-key: ${DEEPSEEK_API_KEY}
+      base-url: https://api.deepseek.com
+      chat:
+        model: deepseek-flash
+      embedding:
+        base-url: https://api.siliconflow.cn/v1
+        api-key: ${SILICONFLOW_API_KEY}
+        model: BAAI/bge-m3
+    vectorstore:
+      pgvector:
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+        dimensions: 1024
+        initialize-schema: true
+    model:
+      embedding: openai
+  datasource:
+    url: jdbc:postgresql://localhost:5432/GameSage
+    username: postgres
+    password: ${SQL_PASSWORD}
+
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: DEBUG
+
+datasource.update: false

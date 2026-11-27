@@ -1,0 +1,32 @@
+# 测试专用配置：不访问外部模型服务、不连接数据库、启动时不加载知识库
+spring:
+  ai:
+    openai:
+      api-key: test-openai-key
+      base-url: https://api.deepseek.com
+      chat:
+        model: test-chat-model
+      embedding:
+        api-key: test-embedding-key
+        base-url: https://api.siliconflow.cn/v1
+        model: test-embedding-model
+    vectorstore:
+      pgvector:
+        initialize-schema: false
+    model:
+      embedding: openai
+  datasource:
+    url: jdbc:postgresql://localhost:5432/GameSage_test
+    username: test
+    password: test
+    hikari:
+      # 测试期间不主动建立真实连接
+      initialization-fail-timeout: -1
+
+datasource:
+  update: false
+
+logging:
+  level:
+    root: WARN
+    org.springframework.ai: WARN
