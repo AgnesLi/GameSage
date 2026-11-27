@@ -120,7 +120,7 @@ docker compose up -d
 # 项目根目录
 mvn clean package
 
-java -jar gameSage-code/target/gameSage-code-1.0-SNAPSHOT.jar
+java -jar gameSage-code/target/gameSage-code-1.0-SNAPSHOT-exec.jar
 ```
 
 或开发模式直接运行：
